@@ -18,7 +18,7 @@ public class UserController {
     public ResponseEntity getAllUser(@PathVariable int id) {
         try {
             if (id == 1)
-                return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new UserResponse("Somebody No 1", 25));
+                return ResponseEntity.status(HttpStatus.OK).body(new UserResponse("Somebody No 1", 25));
             throw new RuntimeException("User not found");
         } catch (RuntimeException exception) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new ErrorResponse(exception.getMessage()));
